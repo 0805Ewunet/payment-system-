@@ -35,8 +35,8 @@ export default class PaymentForm extends Component {
     this.state = {
       cardBrand: "",
       nonce: undefined,
-      googlePay: false,
-      applePay: false,
+      googlePay: true,
+      applePay: true,
       masterpass: false,
     };
     this.requestCardNonce = this.requestCardNonce.bind(this);
@@ -111,20 +111,20 @@ export default class PaymentForm extends Component {
         },
         createPaymentRequest: () => {
           return {
-            requestShippingAddress: false,
+            requestShippingAddress: true,
             requestBillingInfo: true,
             currencyCode: "USD",
             countryCode: "US",
             total: {
               label: "MERCHANT NAME",
               amount: "100",
-              pending: false,
+              pending: true,
             },
             lineItems: [
               {
                 label: "Subtotal",
                 amount: "100",
-                pending: false,
+                pending: true,
               },
             ],
           };
@@ -208,7 +208,9 @@ export default class PaymentForm extends Component {
 
           <div id="sq-ccbox">
             <p>
-              <span style={styles.leftCenter}>Enter Card Info Below </span>
+              <span style={styles.leftCenter}>
+                <strong>Enter Card Info Below</strong>{" "}
+              </span>
               <span style={styles.blockRight}>
                 {this.state.cardBrand.toUpperCase()}
               </span>
