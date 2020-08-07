@@ -15,7 +15,7 @@ class App extends Component {
     let sqPaymentScript = document.createElement("script");
     sqPaymentScript.src = "https://js.squareup.com/v2/paymentform";
     sqPaymentScript.type = "text/javascript";
-    sqPaymentScript.async = false;
+    sqPaymentScript.async = true;
     sqPaymentScript.onload = () => {
       that.setState({
         loaded: true,

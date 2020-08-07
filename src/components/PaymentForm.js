@@ -40,6 +40,7 @@ export default class PaymentForm extends Component {
       masterpass: false,
     };
     this.requestCardNonce = this.requestCardNonce.bind(this);
+    this.requestCardNonce = this.requestCardNonce.bind(this);
   }
 
   requestCardNonce() {
@@ -48,10 +49,10 @@ export default class PaymentForm extends Component {
 
   componentDidMount() {
     const config = {
-      applicationId: "sq0idp-rARHLPiahkGtp6mMz2OeCA",
+      applicationId: "sq0idp-XtxYo_Qa5o3PeUx_mIwGtQ",
       locationId: "GMT96A77XABR1",
       inputClass: "sq-input",
-      autoBuild: false,
+      autoBuild: true,
       inputStyles: [
         {
           fontSize: "16px",
